@@ -4,7 +4,7 @@
             <a class="navbar-brand">{{pageTitle}}</a>
             <ul class="nav navbar-nav">
                 <li><a [routerLink]="['/welcome']">Home</a></li>
-                <li><a>Product List</a></li>
+                <li><a [routerLink]="['/products']">Product List</a></li>
                 <li><a>Add Product</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -15,7 +15,7 @@
                     <a>Show Messages</a>
                 </li>
                 <li *ngIf="!authService.isLoggedIn()">
-                    <a>Log In</a>
+                    <a [routerLink]="['/login']">Log In</a>
                 </li>
                 <li *ngIf="authService.isLoggedIn()">
                     <a (click)="logOut()">Log Out</a>
