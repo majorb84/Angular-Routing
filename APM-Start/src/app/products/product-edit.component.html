@@ -89,7 +89,7 @@
                             </button>
                         </span>
                         <span>
-                            <a class="btn btn-default">
+                            <a class="btn btn-default" [routerLink]="['/products']">
                                 Cancel
                             </a>
                         </span>
@@ -105,5 +105,4 @@
         </form>
         <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
     </div>
-
 </div>

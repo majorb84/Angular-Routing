@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { ProductListComponent } from './product-list.component';
@@ -9,12 +9,15 @@ import { ProductFilterPipe } from './product-filter.pipe';
 import { ProductService } from './product.service';
 
 import { SharedModule } from '../shared/shared.module';
+import { componentFactoryName } from '../../../node_modules/@angular/compiler';
 
 @NgModule({
   imports: [
     SharedModule,
     RouterModule.forChild([
-      { path: 'products', component: ProductListComponent }
+      { path: 'products', component: ProductListComponent },
+      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'products/:id/edit', component: ProductEditComponent }
     ])
   ],
   declarations: [
